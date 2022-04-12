@@ -151,7 +151,7 @@ jobs:
         env:
           RELEASE_FIRMWARE_VALUE: ${{ secrets.RELEASE_FIRMWARE }}
       - name: 上传固件到artifact
-        if: github.event.inputs.artifact == 'true' || steps.upload-release.conclusion == 'skipped'
+        if: github.event.inputs.artifact == 'true' || steps.upload-release.conclusion == 'skipped' || failure()
         uses: actions/upload-artifact@v3
         with:
           name: collected_firmware
