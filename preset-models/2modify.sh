@@ -2,7 +2,7 @@
 #修改登录IP
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 #修改主机名
-sed -i 's/OpenWrt/Xiaomi-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/MiWiFi-CR6608/g' package/base-files/files/bin/config_generate
 #删除自带低版本xray-core
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
@@ -10,7 +10,7 @@ rm -rf package/feeds/packages/xray-core
 sed -i '/exit 0/d' package/default-settings/files/zzz-default-settings
 cat default-settings/config_ipv6 >> package/default-settings/files/zzz-default-settings
 cat default-settings/config_theme >> package/default-settings/files/zzz-default-settings
-cat default-settings/config_vssr >> package/default-settings/files/zzz-default-settings
+# cat default-settings/config_vssr >> package/default-settings/files/zzz-default-settings
 cat default-settings/config_smartdns >> package/default-settings/files/zzz-default-settings
 echo "exit 0" >> package/default-settings/files/zzz-default-settings
 #复制内核5.10版本CPU超频补丁
